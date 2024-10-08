@@ -1,2 +1,2 @@
-# wastewise
+# Wastewise
 gwc project
