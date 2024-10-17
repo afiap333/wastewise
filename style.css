@@ -12,6 +12,10 @@
     font-style: normal;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #cdffd8, #94b9ff);
+}
 
 .navbar {
     font-family: 'Poppins', sans-serif;
