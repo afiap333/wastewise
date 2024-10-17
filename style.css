@@ -17,8 +17,11 @@ body {
     background: linear-gradient(to right, #cdffd8, #94b9ff);
 }
 
-.navbar {
+nav {
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    list-style: none;
+    /* flex-direction: row;  */
 }
 
 main {
