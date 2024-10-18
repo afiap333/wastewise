@@ -18,11 +18,35 @@ body {
 }
 
 nav {
-    font-family: 'Poppins', sans-serif;
     display: flex;
-    list-style: none;
-    /* flex-direction: row;  */
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    flex-grow: 0; 
+    text-align: center; 
+    padding-bottom: 10px;
+    margin-top: 20px;
+    border-bottom: 1px solid black;
 }
+
+nav ul {
+    padding: 10px; 
+    margin: 0px; 
+}
+
+nav li { 
+    display: inline-block; 
+    text-align: center; 
+    font-size: 30px; 
+    margin-left: 10px; 
+    margin-right: 10px; 
+}
+
+a {
+    color: #000011; 
+    font-weight:bold; 
+    text-decoration: none;}
+
+a:hover { color: #537692; }
 
 main {
     font-family: 'Poppins', sans-serif;
