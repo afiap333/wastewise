@@ -23,8 +23,8 @@ nav {
     font-family: 'Poppins', sans-serif;
     flex-grow: 0; 
     text-align: center; 
-    padding-bottom: 10px;
-    margin-top: 20px;
+    padding-bottom: 5px;
+    margin-top: 10px;
     border-bottom: 1px solid black;
 }
 
@@ -36,9 +36,9 @@ nav ul {
 nav li { 
     display: inline-block; 
     text-align: center; 
-    font-size: 30px; 
-    margin-left: 10px; 
-    margin-right: 10px; 
+    font-size: 25px; 
+    margin-left: 50px; 
+    margin-right: 50px; 
 }
 
 a {
@@ -50,4 +50,14 @@ a:hover { color: #537692; }
 
 main {
     font-family: 'Poppins', sans-serif;
+}
+
+#index-main {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
 }
