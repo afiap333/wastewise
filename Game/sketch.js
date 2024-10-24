@@ -9,12 +9,23 @@ function setup() {
   let height=400;
   createCanvas(width, height);
   startButton=new Sprite();
+  startButton.x=-1000;
+  startButton.y=-1000;
+  startButton.width=200;
+  startButton.height=50;
+  startButton.text="Click here to start";
+  startButton.color="white";
 }
 
 function draw() {
   switch(screen){
     case 0:
       showScreen0();
+      print(screen);
+      break;
+    case 1:
+      showScreen1();
+      break;
   }
 }
 
@@ -39,8 +50,16 @@ function showScreen0(){
   text("WASTE-WISE",width/2,height/2);
   secondaryFontSetup();
   text("An educational game experience",width/2,height/2+50);
-  startButton.x=width/2;
-  startButton.y=height/2+150;
+  startButton.x=200;
+  startButton.y=300;
+  startButton.onMousePressed=showScreen1();
+}
+
+function showScreen1(){
+  startButton.x=-1000;
+  drawBackground();
+  secondaryFontSetup();
+  text("Screen 2",width/2,height/2+50);
 }
 
 function mainFontSetup(){
@@ -55,4 +74,8 @@ function secondaryFontSetup(){
   textAlign("center");
   fill("white");
   textSize(20);
+}
+
+function setUpStartButton(x,y){
+
 }
