@@ -18,15 +18,19 @@ function setup() {
 }
 
 function draw() {
+  if(screen==0){
+    showScreen0();
+  }
   switch(screen){
     case 0:
       showScreen0();
       print(screen);
       break;
     case 1:
-      showScreen1();
+      //showScreen1();
       break;
   }
+  screen=0;
 }
 
 function drawBackground(){
@@ -52,14 +56,18 @@ function showScreen0(){
   text("An educational game experience",width/2,height/2+50);
   startButton.x=200;
   startButton.y=300;
-  startButton.onMousePressed=showScreen1();
-}
+  startButton.mousePressed(() => {
+    screen = 1;
+  });
+  }
 
 function showScreen1(){
   startButton.x=-1000;
   drawBackground();
+  mainFontSetup();
+  text("Instructions",width/2,height/2-100);
   secondaryFontSetup();
-  text("Screen 2",width/2,height/2+50);
+  text("Answer which choice you think\n is the most sustainable\n and avoids overconsumption",width/2,height/2);
 }
 
 function mainFontSetup(){
