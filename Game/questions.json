@@ -1,17 +1,17 @@
 [
     {
         "question": "Should you buy a new phone this year?\nThe iPhone 16 just came out!",
-        "options": ["Yes","No"],
-        "correct":"No"
+        "options": ["Yes", "No"],
+        "correct": "No"
     },
     {
-        "question": "Nothing in your fridge looks good.\n Should you eat lunch out?",
-        "options": ["Yes","No"],
-        "correct":"No"
+        "question": "Nothing in your fridge looks good.\nShould you eat lunch out?",
+        "options": ["Yes", "No"],
+        "correct": "No"
     },
     {
-        "question": "You got invited to a party!\n Everyone is wearing new clothes\n. Should you go shopping?",
-        "options": ["Yes","No"],
-        "correct":"No"
+        "question": "You got invited to a party!\nEveryone is wearing new clothes.\nShould you go shopping?",
+        "options": ["Yes", "No"],
+        "correct": "No"
     }
 ]
