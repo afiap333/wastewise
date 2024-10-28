@@ -15,35 +15,12 @@ function preload() {
 
 function setup() {
   createCanvas(500, 400);
-
   // Create the start button
   startButton = createButton("Click here to start");
-  startButton.position(width / 2 - 100, height / 2 + 100);
-  startButton.style("font-size", "18px");
-  startButton.style("padding", "10px 20px");
-  startButton.style("background-color", "#ffffff");
-  startButton.style("color", "#000000");
-  startButton.mousePressed(() => {
-    screen = 1;
-    startButton.hide();
-    nextButton.show();
-  });
-
+  startButtonStyling();
   // Create the next button for advancing to the first question
   nextButton = createButton("Start Quiz");
-  nextButton.position(width / 2 - 100, height / 2 + 150);
-  nextButton.style("font-size", "18px");
-  nextButton.style("padding", "10px 20px");
-  nextButton.style("background-color", "#ffffff");
-  nextButton.style("color", "#000000");
-  nextButton.hide();
-  nextButton.mousePressed(() => {
-    if (questions) {  // Check if questions are loaded
-      screen = 2;
-      nextButton.hide();
-      setUpQuestion();
-    }
-  });
+  nextButtonStyling();
 }
 
 function draw() {
@@ -75,10 +52,9 @@ function drawBackground() {
     'from': [20, 20],
     'to': [580, 580],
     'steps': [
-      [color(255), 0],
-      [color(0, 96, 164), .25],
-      [color(0, 128, 196), .75],
-      [color(0), 1]
+      [color("purple"), 0],
+      [color("teal"), .25],
+      [color("purple"), .75],
     ]
   });
   rect(0, 0, width, height);
@@ -86,9 +62,9 @@ function drawBackground() {
 
 function showScreen0() {
   mainFontSetup();
-  text("WASTE-WISE", width / 2, height / 2);
+  text("WASTE-WISE", width / 2, height / 2-50);
   secondaryFontSetup();
-  text("An educational game experience", width / 2, height / 2 + 50);
+  text("An educational game experience", width / 2, height / 2 );
 }
 
 function showScreen1() {
@@ -108,7 +84,12 @@ function setUpQuestion() {
 
   currentQuestion.options.forEach((option, index) => {
     let button = createButton(option);
-    button.position(150, 200 + index * 40);
+    buttonStyling(button);
+    if(index==0){
+    button.position(150, 200);}
+    if(index==1){
+      button.position(300,200);
+    }
     button.mousePressed(() => checkAnswer(option));
     optionButtons.push(button);
   });
@@ -119,7 +100,7 @@ function displayQuestion() {
   drawBackground();
   const currentQuestion = questions[currentQuestionIndex];
 
-  mainFontSetup();
+  secondaryFontSetup();
   text(currentQuestion.question, width / 2, 100);
 }
 
@@ -141,7 +122,7 @@ function checkAnswer(selectedOption) {
 function showEndScreen() {
   optionButtons.forEach(button => button.remove());
   
-  mainFontSetup();
+  secondaryFontSetup();
   text(`Quiz complete! Your score: ${score}/${Object.keys(questions).length}`, width / 2, height / 2);
 }
 
@@ -149,7 +130,7 @@ function mainFontSetup() {
   textFont(mainFont);
   textAlign(CENTER, CENTER);
   fill("white");
-  textSize(30);
+  textSize(60);
 }
 
 function secondaryFontSetup() {
@@ -157,4 +138,33 @@ function secondaryFontSetup() {
   textAlign(CENTER, CENTER);
   fill("white");
   textSize(20);
+}
+
+function startButtonStyling(){
+  startButton.position(width / 2 - 100, height / 2 + 50);
+  buttonStyling(startButton);
+  startButton.mousePressed(() => {
+    screen = 1;
+    startButton.hide();
+    nextButton.show();
+  });
+}
+function nextButtonStyling(){
+  nextButton.position(width / 2, height / 2 + 50);
+  buttonStyling(nextButton);
+  nextButton.hide();
+  nextButton.mousePressed(() => {
+    if (questions) {  // Check if questions are loaded
+      screen = 2;
+      nextButton.hide();
+      setUpQuestion();
+    }
+  });
+}
+
+function buttonStyling(button){
+  button.style("font-size", "18px");
+  button.style("padding", "10px 20px");
+  button.style("background-color", "#ffffff");
+  button.style("color", "#000000");
 }
