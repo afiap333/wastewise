@@ -4,24 +4,27 @@ let questions, currentQuestionIndex = 0, score = 0;
 let optionButtons = [];
 
 function preload() {
-  mainFont = loadFont("libraries/Poppins-Bold.ttf");
-  secondaryFont = loadFont("libraries/Poppins-Regular.ttf");
+  mainFont = loadFont("Game/libraries/Poppins-Bold.ttf");
+  secondaryFont = loadFont("Game/libraries/Poppins-Regular.ttf");
   
   // Use a callback to ensure questions is populated after JSON is loaded
-  loadJSON('questions.json', (data) => {
+  loadJSON('Game/questions.json', (data) => {
     questions = data;
   });
 }
 
 function setup() {
-  createCanvas(500, 400);
-  // Create the start button
+  let canvas = createCanvas(500, 400);
+  canvas.parent("game-container");  // Attach canvas to the specified div
+
+  // Create start and next buttons
   startButton = createButton("Click here to start");
   startButtonStyling();
-  // Create the next button for advancing to the first question
+
   nextButton = createButton("Start Quiz");
   nextButtonStyling();
 }
+
 
 function draw() {
   if (!questions) {  // Show loading screen if questions are not loaded
