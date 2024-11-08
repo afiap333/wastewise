@@ -28,15 +28,15 @@ function setup() {
 
 function draw() {
   if (!questions) {  // Show loading screen if questions are not loaded
-    background(50);
-    fill("white");
+    background("#16697A");
+    fill("#16697A");
     textAlign(CENTER, CENTER);
     textSize(24);
     text("Loading quiz...", width / 2, height / 2);
     return;
   }
-  
-  drawBackground();
+  background("#16697A");
+ // drawBackground();
 
   if (screen == 0) {
     showScreen0();  
@@ -99,8 +99,7 @@ function setUpQuestion() {
 }
 
 function displayQuestion() {
-  background(50);
-  drawBackground();
+  background("#16697A");
   const currentQuestion = questions[currentQuestionIndex];
 
   secondaryFontSetup();
