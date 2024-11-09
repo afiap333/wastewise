@@ -69,14 +69,14 @@ main {
     margin-top: 30px;
 }
 
-p{
+#info{
     padding-left: 4rem;
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     padding-right:4rem;
 }
 
-h1{
+#index-main h1{
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 8rem;
@@ -86,7 +86,7 @@ h1{
     color: white;
 
 }
-h2{
+#index-main h2{
     font-size: 2rem;
     line-height: 0;
     font-family: 'Quicksand', sans-serif;
