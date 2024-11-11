@@ -45,6 +45,8 @@ nav li {
 
 a {
     color: white; 
+    padding: .4rem;
+    border-radius: 10px;
     font-weight:bold; 
     text-decoration: none;}
 
