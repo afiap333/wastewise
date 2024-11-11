@@ -94,6 +94,20 @@ main {
     font-style: italic;
 }
 
+#learnMore a {
+    color: #16697A; 
+    background-color: white;
+    font-weight:bold; 
+    padding: .4rem;
+    border-radius: 10px;
+    text-decoration: none;}
+
+ a:hover { color: #16697A; 
+        background-color: white;
+        padding: .4rem;
+        border-radius: 10px;
+    }
+
 
 /* GAME SECTION */
 
@@ -145,3 +159,43 @@ main {
     margin: 0 auto;
 }
 
+/*INFO SECTION*/
+
+#info-main section {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    flex-wrap: wrap;
+    /* margin-top: 20px; */
+}
+
+#section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.heading{
+    padding-left: 10rem;
+    padding-right: 5rem;
+}
+.heading h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.content{
+    padding-left: 5rem;
+    padding-right:5rem;
+}
+.heading h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: italic;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
