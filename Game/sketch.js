@@ -1,7 +1,9 @@
 let screen = 0;
+let bg;
 let mainFont, secondaryFont, startButton, nextButton;
 let questions, currentQuestionIndex = 0, score = 0;
 let optionButtons = [];
+let width=900, height=600;
 
 function preload() {
   mainFont = loadFont("Game/libraries/Poppins-Bold.ttf");
@@ -11,10 +13,11 @@ function preload() {
   loadJSON('Game/questions.json', (data) => {
     questions = data;
   });
+  bg=loadImage("Game/gameBackground.png");
 }
 
 function setup() {
-  let canvas = createCanvas(500, 400);
+  let canvas = createCanvas(900, 600);
   canvas.parent("game-container");  // Attach canvas to the specified div
 
   // Create start and next buttons
@@ -28,14 +31,14 @@ function setup() {
 
 function draw() {
   if (!questions) {  // Show loading screen if questions are not loaded
-    background("#16697A");
+    background(bg);
     fill("#16697A");
     textAlign(CENTER, CENTER);
     textSize(24);
     text("Loading quiz...", width / 2, height / 2);
     return;
   }
-  background("#16697A");
+  background(bg);
  // drawBackground();
 
   if (screen == 0) {
@@ -50,7 +53,7 @@ function draw() {
 }
 
 function drawBackground() {
-  background(50);
+  background(bg);
   fillGradient('linear', {
     'from': [20, 20],
     'to': [580, 580],
@@ -87,19 +90,14 @@ function setUpQuestion() {
 
   currentQuestion.options.forEach((option, index) => {
     let button = createButton(option);
-    buttonStyling(button);
-    if(index==0){
-    button.position(150, 200);}
-    if(index==1){
-      button.position(300,200);
-    }
+    buttonStylingChoices(button,index);
     button.mousePressed(() => checkAnswer(option));
     optionButtons.push(button);
   });
 }
 
 function displayQuestion() {
-  background("#16697A");
+  background(bg);
   const currentQuestion = questions[currentQuestionIndex];
 
   secondaryFontSetup();
@@ -153,6 +151,7 @@ function startButtonStyling(){
 }
 function nextButtonStyling(){
   nextButton.position(width / 2, height / 2 + 50);
+  nextButton.CENTER;
   buttonStyling(nextButton);
   nextButton.hide();
   nextButton.mousePressed(() => {
@@ -167,6 +166,27 @@ function nextButtonStyling(){
 function buttonStyling(button){
   button.style("font-size", "18px");
   button.style("padding", "10px 20px");
-  button.style("background-color", "#ffffff");
-  button.style("color", "#000000");
+  button.style("background-color", "#499F68");
+  button.style("color", "#ffffff");
+  button.style("font-weight","bold");
+  button.style('position', 'absolute');
+  button.style('left', '50%');
+  button.style('top', '70%');
+  button.style('transform', 'translate(-50%, -70%)'); 
+}
+
+function buttonStylingChoices(button,index){
+  button.style("font-size", "18px");
+  button.style("padding", "10px 20px");
+  button.style("background-color", "#499F68");
+  button.style("color", "#ffffff");
+  button.style("font-weight","bold");
+  if(index==0){
+  button.style('left', '40%');}
+  if(index==1){
+    button.style('right','40%');
+  }
+  button.style('top', '50%');
+  button.style('position', 'absolute');
+  button.style('transform', 'translate(-50%, -40%)'); 
 }

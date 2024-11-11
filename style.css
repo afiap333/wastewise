@@ -199,3 +199,60 @@ main {
     align-items: center;
     color: white;
 }
+
+.collapsible{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+details {
+    border-radius: 40px;
+    justify-self:center;
+    padding: 4vh;
+    background-color: linear-gradient(to right, #16697A, #499F68);
+    margin: 1rem;
+    width: 80vw;
+}
+details > summary:not([open]){
+    color:white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-style: italic;
+    font-family:"Poppins",sans-serif;
+    text-transform: uppercase;
+    align-content: center;
+}
+details:not([open]):hover,details:not([open]):focus{
+    border:1rem solid white;
+    transition: all 0.3s ease; 
+    font-size: 1.5rem;
+    font-style: italic;
+    font-family:"Poppins",sans-serif;
+    align-content: center;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+details:not([open]):hover,
+details:not([open]):focus {
+    border:.1rem solid white;
+    border-radius: 40px;
+    width: 80vw;
+    transition: all 0.3s ease; 
+}
+details[open]>summary{
+   color:#16697A;
+   font-weight: 500;
+   text-transform: uppercase;
+}
+details[open] {
+    padding-bottom: 3vh;
+    border: none;
+    border-radius: 40px;
+    width: 80vw;
+    background-color:white;
+    color: #16697A;
+    font-family:"Quicksand", sans-serif;
+    font-weight: 700;
+}
