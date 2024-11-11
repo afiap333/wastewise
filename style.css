@@ -171,29 +171,37 @@ main {
     justify-content: center; 
     gap: 20px; 
     flex-wrap: wrap;
-    /* margin-top: 20px; */
 }
 
-#section{
+#section {
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
-.heading{
+    align-items: flex-start;
+    width: 100%; 
+    margin-bottom: 20px; }
+
+.heading {
     padding-left: 10rem;
     padding-right: 5rem;
+    width:40%;
 }
-.heading h2{
+
+.heading h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 2rem;
-    justify-content: center;
-    align-items: center;
+    text-align: left; 
     color: white;
 }
-.content{
-    padding-left: 5rem;
-    padding-right:5rem;
+
+.content {
+    margin: 0;
+    padding: 10px;
+    width: 60%; 
+    box-sizing: border-box;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 .heading h3{
     font-family: 'Poppins', sans-serif;
