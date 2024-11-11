@@ -161,6 +161,9 @@ main {
     margin: 0 auto;
 }
 
+.resource p{
+    font-weight: 300;
+}
 /*INFO SECTION*/
 
 #info-main section {
